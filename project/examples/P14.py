@@ -49,8 +49,8 @@ square = 15   # square edge length (px)
 x = (WIDTH-1)/2   # starting position
 y = (HEIGHT-1)/2  # starting y position
 
-v = {'x': 2.3, # Starting velocity (pixels per animation frame)
-     'y': 3.5}
+v = {'x': 100, # Starting velocity (pixels per animation frame)
+     'y': 100}
 
 collisionCount = 0
 while True:

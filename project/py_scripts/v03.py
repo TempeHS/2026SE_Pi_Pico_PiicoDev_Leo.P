@@ -32,7 +32,7 @@ dead_zone_us = 1500
 my_servo = Servo(
     pwm=servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
 )
-my_servo_r = Servo(
+r_my_servo = Servo(
     pwm=r_servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
 )
 
