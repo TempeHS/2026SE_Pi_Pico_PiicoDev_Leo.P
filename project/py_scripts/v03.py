@@ -20,7 +20,7 @@ from servo import Servo
 
 # create a PWM servo controller (16 - pin Pico)
 servo_pwm = PWM(Pin(16))
-r_servo_pwm = PWM(Pin(15))
+l_servo_pwm = PWM(Pin(15))
 
 # Set the parameters of the servo pulses, more details in the "Documentation" section
 freq = 50
@@ -29,13 +29,7 @@ max_us = 2500
 dead_zone_us = 1500
 
 # create a servo object
-my_servo = Servo(
-    pwm=servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
-)
-r_my_servo = Servo(
-    pwm=r_servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
-)
-
+my_servo = Servo(pwm=servo_pwm)
 while True:
     # manually set the servo duty time
     my_servo.set_duty(500)
@@ -44,5 +38,22 @@ while True:
     my_servo.set_duty(1500)
     time.sleep(2)
 
+    my_servo.set_duty(2500)
+    time.sleep(2)
+
     my_servo.stop()
+    time.sleep(2)
+
+l_my_servo = Servo(pwm=l_servo_pwm)
+while True:
+    l_my_servo.set_duty(500)
+    time.sleep(2)
+
+    l_my_servo.set_duty(1500)
+    time.sleep(2)
+
+    l_my_servo.set_duty(2500)
+    time.sleep(2)
+
+    l_my_servo.stop()
     time.sleep(2)
