@@ -30,30 +30,43 @@ dead_zone_us = 1500
 
 # create a servo object
 my_servo = Servo(pwm=servo_pwm)
-while True:
-    # manually set the servo duty time
-    my_servo.set_duty(500)
-    time.sleep(2)
-
-    my_servo.set_duty(1500)
-    time.sleep(2)
-
-    my_servo.set_duty(2500)
-    time.sleep(2)
-
-    my_servo.stop()
-    time.sleep(2)
-
 l_my_servo = Servo(pwm=l_servo_pwm)
 while True:
-    l_my_servo.set_duty(500)
-    time.sleep(2)
-
-    l_my_servo.set_duty(1500)
-    time.sleep(2)
-
+    # manually set the servo duty time
+    # r wheel
+    my_servo.set_duty(500)
+    # l wheel
     l_my_servo.set_duty(2500)
     time.sleep(2)
 
-    l_my_servo.stop()
-    time.sleep(2)
+
+
+
+
+# while True:
+#     # manually set the servo duty time
+#     # r wheel
+#     my_servo.set_duty(500)
+#     time.sleep(2)
+
+#     my_servo.set_duty(1500)
+#     time.sleep(2)
+
+#     my_servo.set_duty(2500)
+#     time.sleep(2)
+
+#     my_servo.stop()
+#     time.sleep(2)
+
+#     # l wheel
+#     l_my_servo.set_duty(500)
+#     time.sleep(2)
+
+#     l_my_servo.set_duty(1500)
+#     time.sleep(2)
+
+#     l_my_servo.set_duty(2500)
+#     time.sleep(2)
+
+#     # l_my_servo.stop()
+#     time.sleep(2)
