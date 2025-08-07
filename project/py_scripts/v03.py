@@ -41,8 +41,6 @@ while True:
 
 
 
-
-
 # while True:
 #     # manually set the servo duty time
 #     # r wheel
