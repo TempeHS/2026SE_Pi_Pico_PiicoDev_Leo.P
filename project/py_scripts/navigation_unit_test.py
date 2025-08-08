@@ -11,5 +11,5 @@ r_servo = Servo(pwm=r_servo_pwm)
 movement = Navigation(l_servo, r_servo, debug=True)
 
 print("Testing navigation")
-movement.move_r()
+movement.move_l()
 movement.stop()
