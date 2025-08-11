@@ -14,7 +14,7 @@ r_servo = Servo(pwm=r_servo_pwm)
 movement = Navigation(l_servo, r_servo, debug=True)
 
 range_a = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
-range_b = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
+range_b = PiicoDev_Ultrasonic(id=[0, 0, 1, 0])
 
 print("Testing navigation")
 movement.move_forward()
