@@ -61,23 +61,3 @@ class Navigation:
             print("Stopped")
         l_servo.set_duty(1500)
         r_servo.set_duty(1500)
-
-# class Ultrasonic:
-#     def __init__(self, l_servo, r_servo, debug=False):
-#         self.__l_servo = l_servo
-#         self.__r_servo = r_servo
-#         self.__debug = debug
-
-# range_a = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
-# range_b = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
-
-# movement = Navigation(l_servo, r_servo, debug=True)
-
-# while True:
-#     distance1 = range_a.distance_mm
-#     distance2 = range_b.distance_mm
-#         if distance1 <= 20:
-#             movement.stop()
-#     print(range_a.distance_mm, range_b.distance_mm)
-    
-#     sleep_ms(100)
