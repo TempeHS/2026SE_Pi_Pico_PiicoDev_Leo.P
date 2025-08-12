@@ -13,18 +13,17 @@ r_servo = Servo(pwm=r_servo_pwm)
 
 movement = Navigation(l_servo, r_servo, debug=True)
 
-range_a = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
-range_b = PiicoDev_Ultrasonic(id=[0, 0, 1, 0])
+range_a = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
+range_b = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
 
 print("Testing navigation")
 time.sleep(5)
 movement.move_l()
 movement.move_r()
-movement.stop()
+movement.move_forward()
 
-
-# while True:
-#     distance1 = range_a.distance_mm
-#     distance2 = range_b.distance_mm
-#     if distance1 <= 40 or distance2 <=40:
-#             movement.stop()
+while True:
+    distance1 = range_a.distance_mm
+    distance2 = range_b.distance_mm
+    if distance1 <= 100 or distance2 <=100:
+            movement.stop()
