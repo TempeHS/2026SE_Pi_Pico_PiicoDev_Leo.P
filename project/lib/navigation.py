@@ -40,14 +40,14 @@ class Navigation:
             print("Turning Right")
         l_servo.set_duty(1500)
         r_servo.set_duty(1800)
-        time.sleep(2)
+        time.sleep(2.5)
 
     def move_l(self):
         if self.__debug:
             print("Turning Left")
         l_servo.set_duty(1300)
         r_servo.set_duty(1500)
-        time.sleep(2)
+        time.sleep(2.5)
 
     def spin(self):
         if self.__debug:

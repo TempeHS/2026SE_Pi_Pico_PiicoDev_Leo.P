@@ -3,18 +3,18 @@ from PiicoDev_Unified import sleep_ms
 
 colourSensor = PiicoDev_VEML6040()
 
-class colour:
-    def __init__(self, red, grn, blu, debug=False):
-        self.__red = red
-        self.__grn = grn
-        self.__blu = blu
+class Colour:
+    def __init__(self, colour, debug=False):
+        self.__colour = colour
         self.__debug = debug
-    
-while True:
-    data = colourSensor.readRGB()
-    red = data['red']
-    grn = data['green']
-    blu = data['blue']
-    
-    print(str(blu) + " Blue  " + str(grn) + " Green  " + str(red) + " Red")
-    sleep_ms(1000)
+
+    def find_green(self):
+        if self.__debug:
+            print("Detecting Green")
+        self.__colour
+        while True:
+            data = colourSensor.readHSV()
+            hue = data['hue']
+            print(str(label) + " Hue: " + str(hue))
+
+# 10 software engineering students VS print("Hello World!")
