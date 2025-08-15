@@ -15,6 +15,9 @@ dead_zone_us = 1500
 l_servo = Servo(pwm=l_servo_pwm)
 r_servo = Servo(pwm=r_servo_pwm)
 
+range_a = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
+range_b = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
+
 class Navigation:
     def __init__(self, l_servo, r_servo, debug=False):
         self.__l_servo = l_servo
@@ -38,14 +41,14 @@ class Navigation:
             print("Turning Right")
         l_servo.set_duty(1500)
         r_servo.set_duty(1800)
-        time.sleep(2.5)
+        time.sleep(2)
 
     def move_l(self):
         if self.__debug:
             print("Turning Left")
         l_servo.set_duty(1300)
         r_servo.set_duty(1500)
-        time.sleep(2.5)
+        time.sleep(2)
 
     def spin(self):
         if self.__debug:
@@ -59,3 +62,16 @@ class Navigation:
             print("Stopped")
         l_servo.set_duty(1500)
         r_servo.set_duty(1500)
+
+    def obstacle_avoid(self):
+        while True:
+            distance1 = range_a.distance_mm
+            distance2 = range_b.distance_mm
+            if distance1 <= 100 and distance2 > 100:
+                move_r()
+            elif distance1 > 100 and distance2 <= 100:
+                move_forward()
+            elif distance1 <= 100 and distance2 <= 100:
+                move_l()
+            else:
+                move_forward()
