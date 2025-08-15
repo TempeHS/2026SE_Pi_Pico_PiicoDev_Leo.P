@@ -26,14 +26,12 @@ class Navigation:
             print("Going Forward")
         self.__l_servo.set_duty(2500)
         self.__r_servo.set_duty(500)
-        time.sleep(2)
 
     def move_backward(self):
         if self.__debug:
             print("Going Backward")
         l_servo.set_duty(500)
         r_servo.set_duty(2500)
-        time.sleep(2)
 
     def move_r(self):
         if self.__debug:
