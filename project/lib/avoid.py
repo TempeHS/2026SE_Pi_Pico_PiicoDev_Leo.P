@@ -16,14 +16,14 @@ range_b = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
 
 movement = Navigation(l_servo, r_servo, debug=True)
 
-class Ultrasonic:
-    def __init__(self, l_servo, r_servo, debug=False):
-        self.__l_servo = l_servo
-        self.__r_servo = r_servo
-        self.__debug = debug
-
 while True:
     distance1 = range_a.distance_mm
     distance2 = range_b.distance_mm
-    if distance1 <= 20 or distance2 <=20:
-            movement.stop()
+    if distance1 <= 100 and distance2 > 100:
+        movement.move_r()
+    elif distance1 > 100 and distance2 <= 100:
+        movement.move_forward()
+    elif distance1 <= 100 and distance2 <= 100:
+        movement.move_l()
+    else:
+        movement.move_forward()
