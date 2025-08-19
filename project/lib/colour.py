@@ -4,17 +4,19 @@ from PiicoDev_Unified import sleep_ms
 colourSensor = PiicoDev_VEML6040()
 
 class Colour:
-    def __init__(self, colour, debug=False):
-        self.__colour = colour
+    def __init__(self, debug=False):
         self.__debug = debug
 
     def find_green(self):
+        data = colourSensor.readHSV()
+        hue = data['hue']
         if self.__debug:
             print("Detecting Green")
-        self.__colour
-        while True:
-            data = colourSensor.readHSV()
-            hue = data['hue']
-            print(str(label) + " Hue: " + str(hue))
+
+        if hue >= 75 and hue <= 95: # rough estimate since the sensor is wack + idk what shade of green it needs to find 
+            print("Green.")
+        else:
+            return False
+
 
 # 10 software engineering students VS print("Hello World!")

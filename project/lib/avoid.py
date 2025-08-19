@@ -5,6 +5,7 @@ from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from PiicoDev_Unified import sleep_ms
 from navigation import Navigation
 
+#instantiation
 r_servo_pwm = PWM(Pin(16))
 l_servo_pwm = PWM(Pin(15))
 
