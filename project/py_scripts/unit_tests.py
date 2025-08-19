@@ -4,6 +4,7 @@ import time
 from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from PiicoDev_Unified import sleep_ms
 from navigation import Navigation
+from PiicoDev_VEML6040 import PiicoDev_VEML6040
 
 r_servo_pwm = PWM(Pin(16))
 l_servo_pwm = PWM(Pin(15))
@@ -16,15 +17,28 @@ range_b = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
 
 movement = Navigation(l_servo, r_servo, debug=True)
 
-# collision avoidance unit test
+### collision avoidance unit test
+# while True:
+#     distance1 = range_a.distance_mm
+#     distance2 = range_b.distance_mm
+#     if distance1 <= 100 and distance2 > 100:
+#         movement.move_r()
+#     elif distance1 > 100 and distance2 <= 100:
+#         movement.move_forward()
+#     elif distance1 <= 100 and distance2 <= 100:
+#         movement.move_l()
+#     else:
+#         movement.move_forward()
+
+### colour sensor unit test
+colourSensor = PiicoDev_VEML6040()
+print("Testing colour sensor")
 while True:
-    distance1 = range_a.distance_mm
-    distance2 = range_b.distance_mm
-    if distance1 <= 100 and distance2 > 100:
-        movement.move_r()
-    elif distance1 > 100 and distance2 <= 100:
-        movement.move_forward()
-    elif distance1 <= 100 and distance2 <= 100:
-        movement.move_l()
+    data = colourSensor.readHSV()
+    hue = data['hue']
+    if hue >= 75 and hue <= 95:
+        print("Found Green", hue)
     else:
-        movement.move_forward()
+        print("No Green Found", hue)
+
+    sleep_ms(300)
