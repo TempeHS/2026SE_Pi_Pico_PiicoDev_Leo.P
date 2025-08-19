@@ -5,6 +5,7 @@ from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from PiicoDev_Unified import sleep_ms
 from navigation import Navigation
 from PiicoDev_VEML6040 import PiicoDev_VEML6040
+from PiicoDev_SSD1306 import *
 
 r_servo_pwm = PWM(Pin(16))
 l_servo_pwm = PWM(Pin(15))
@@ -31,14 +32,20 @@ movement = Navigation(l_servo, r_servo, debug=True)
 #         movement.move_forward()
 
 ### colour sensor unit test
-colourSensor = PiicoDev_VEML6040()
-print("Testing colour sensor")
-while True:
-    data = colourSensor.readHSV()
-    hue = data['hue']
-    if hue >= 75 and hue <= 95:
-        print("Found Green", hue)
-    else:
-        print("No Green Found", hue)
+# colourSensor = PiicoDev_VEML6040()
+# print("Testing colour sensor")
+# while True:
+#     data = colourSensor.readHSV()
+#     hue = data['hue']
+#     if hue >= 75 and hue <= 95:
+#         print("Found Green", hue)
+#     else:
+#         print("No Green Found", hue)
 
-    sleep_ms(300)
+#     sleep_ms(300)
+
+### lcd screen unit test
+display = create_PiicoDev_SSD1306()
+display.fill(0)
+display.text("PiicoDev", 0, 20, 1)
+display.show()
