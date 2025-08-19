@@ -4,6 +4,7 @@ import time
 from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from PiicoDev_Unified import sleep_ms
 
+# instantiation
 r_servo_pwm = PWM(Pin(16))
 l_servo_pwm = PWM(Pin(15))
 
@@ -62,16 +63,3 @@ class Navigation:
             print("Stopped")
         l_servo.set_duty(1500)
         r_servo.set_duty(1500)
-
-    def obstacle_avoid(self):
-        while True:
-            distance1 = range_a.distance_mm
-            distance2 = range_b.distance_mm
-            if distance1 <= 100 and distance2 > 100:
-                move_r()
-            elif distance1 > 100 and distance2 <= 100:
-                move_forward()
-            elif distance1 <= 100 and distance2 <= 100:
-                move_l()
-            else:
-                move_forward()
