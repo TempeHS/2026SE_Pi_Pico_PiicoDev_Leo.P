@@ -45,7 +45,10 @@ movement = Navigation(l_servo, r_servo, debug=True)
 #     sleep_ms(300)
 
 ### lcd screen unit test
+
+
 display = create_PiicoDev_SSD1306()
 display.fill(0)
 display.text("PiicoDev", 0, 20, 1)
+display.text("adhasdh", 0, 40, 1)
 display.show()
