@@ -7,9 +7,7 @@ class Screen:
     def __init__(self, debug=False):
         self.__debug = debug
 
-    def display_stuff(self, thing):
-        if self.__debug:
-            print("Testing stuff display")
+    def display_stuff(thing):
         display.fill(0)
         display.text("Currently:", 0, 20, 1)
         display.text(thing, 0, 40, 1)
