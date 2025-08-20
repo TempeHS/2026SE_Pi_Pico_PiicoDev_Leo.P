@@ -16,9 +16,7 @@ dead_zone_us = 1500
 l_servo = Servo(pwm=l_servo_pwm)
 r_servo = Servo(pwm=r_servo_pwm)
 
-range_a = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
-range_b = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
-
+#
 class Navigation:
     def __init__(self, l_servo, r_servo, debug=False):
         self.__l_servo = l_servo
