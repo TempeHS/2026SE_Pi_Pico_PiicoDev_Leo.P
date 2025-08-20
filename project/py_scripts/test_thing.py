@@ -18,43 +18,14 @@ range_b = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
 
 movement = Navigation(l_servo, r_servo, debug=True)
 
-### collision avoidance unit test
 while True:
     distance1 = range_a.distance_mm
     distance2 = range_b.distance_mm
-    print(1)
     if distance1 <= 100 and distance2 > 100:
         movement.move_r()
-        print(2)
     elif distance1 > 100 and distance2 <= 100:
         movement.move_forward()
-        print(3)
     elif distance1 <= 100 and distance2 <= 100:
         movement.move_l()
-        print(4)
     else:
         movement.move_forward()
-        print(5)
-
-
-### colour sensor unit test
-# colourSensor = PiicoDev_VEML6040()
-# print("Testing colour sensor")
-# while True:
-#     data = colourSensor.readHSV()
-#     hue = data['hue']
-#     if hue >= 75 and hue <= 95:
-#         print("Found Green", hue)
-#     else:
-#         print("No Green Found", hue)
-
-#     sleep_ms(300)
-
-### lcd screen unit test
-
-
-# display = create_PiicoDev_SSD1306()
-# display.fill(0)
-# display.text("PiicoDev", 0, 20, 1)
-# display.text("adhasdh", 0, 40, 1)
-# display.show()
