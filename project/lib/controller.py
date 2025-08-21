@@ -22,7 +22,7 @@ class Controller: # goliath
                 self.__movement.spin()
                 self.__movement.move_forward()
 
-            distance1 = self.__avoider.range_a.dista    nce_mm
+            distance1 = self.__avoider.range_a.distance_mm
             distance2 = self.__avoider.range_b.distance_mm
             
             if distance1 <= 100 and distance2 > 100:
