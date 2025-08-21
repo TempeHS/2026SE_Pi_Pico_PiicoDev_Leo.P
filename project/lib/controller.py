@@ -25,18 +25,18 @@ class Controller: # goliath
             distance2 = self.__avoider.range_b.distance_mm
             
             if distance1 <= 100 and distance2 > 100:
-                self.__movement.move_r()
                 self.__screen.display_stuff("Moving Right")
+                self.__movement.move_r()
             elif distance1 > 100 and distance2 <= 100:
-                self.__movement.move_forward()
                 self.__screen.display_stuff("Moving Forward")
+                self.__movement.move_forward()
             elif distance1 <= 100 and distance2 <= 100:
-                self.__movement.move_l()
                 self.__screen.display_stuff("Moving Left")
+                self.__movement.move_l()
             else:
-                self.__movement.move_forward()
                 self.__screen.display_stuff("Moving Forward")
+                self.__movement.move_forward()
 
 
-robot = Controller()
-robot.update()
+IND = Controller()
+IND.update()
