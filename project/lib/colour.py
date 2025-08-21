@@ -14,7 +14,7 @@ class Colour:
             print("Detecting Green")
 
         if hue >= 75 and hue <= 95: # rough estimate since the sensor is wack + idk what shade of green it needs to find 
-            print("Green.")
+            return True
         else:
             return False
 
