@@ -15,8 +15,8 @@ class Avoid:
         l_servo = Servo(pwm=l_servo_pwm)
         r_servo = Servo(pwm=r_servo_pwm)
 
-        self.range_a = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
-        self.range_b = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
+        self.range_a = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
+        self.range_b = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
 
         self.movement = Navigation(l_servo, r_servo, debug=True)
 
