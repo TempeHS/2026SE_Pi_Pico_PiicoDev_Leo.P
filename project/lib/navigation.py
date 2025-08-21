@@ -32,32 +32,32 @@ class Navigation:
     def move_backward(self):
         if self.__debug:
             print("Going Backward")
-        l_servo.set_duty(500)
-        r_servo.set_duty(2500)
+        self.__l_servo.set_duty(500)
+        self.__r_servo.set_duty(2500)
 
     def move_r(self):
         if self.__debug:
             print("Turning Right")
-        l_servo.set_duty(1500)
-        r_servo.set_duty(1800)
+        self.__l_servo.set_duty(1500)
+        self.__r_servo.set_duty(1800)
         time.sleep(2)
 
     def move_l(self):
         if self.__debug:
             print("Turning Left")
-        l_servo.set_duty(1300)
-        r_servo.set_duty(1500)
+        self.__l_servo.set_duty(1300)
+        self.__r_servo.set_duty(1500)
         time.sleep(2)
 
     def spin(self):
         if self.__debug:
             print("Spinning")
-        l_servo.set_duty(2500)
-        r_servo.set_duty(2500)
+        self.__l_servo.set_duty(2500)
+        self.__r_servo.set_duty(2500)
         time.sleep(2)
 
     def stop(self):
         if self.__debug:
             print("Stopped")
-        l_servo.set_duty(1500)
-        r_servo.set_duty(1500)
+        self.__l_servo.set_duty(1500)
+        self.__r_servo.set_duty(1500)

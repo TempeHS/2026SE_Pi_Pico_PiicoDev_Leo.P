@@ -2,7 +2,6 @@ from navigation import Navigation
 from colour import Colour
 from screen import Screen
 from avoid import Avoid
-from avoid import movement # didnt know u could do this but the internet is a lovely place
 from PiicoDev_Unified import sleep_ms
 
 class Controller: # goliath
@@ -11,12 +10,11 @@ class Controller: # goliath
         self.__avoider = Avoid()
         self.__colour = Colour()
         self.__screen = Screen()
-        self.__movement = movement
+        self.__movement = self.__avoider.movement
 
     def update(self):
         while True:
-            green = self.__colour.find_green()
-            if green:
+            if self.__colour.find_green():
                 self.__screen.display_stuff("Green :)")
                 self.__movement.stop()
                 self.__movement.spin()
@@ -38,6 +36,6 @@ class Controller: # goliath
                 self.__movement.move_forward()
                 self.__screen.display_stuff("Moving Forward")
 
-if __name__ == "__main__":
-    robot = Controller()
-    robot.update()
+
+robot = Controller()
+robot.update()
