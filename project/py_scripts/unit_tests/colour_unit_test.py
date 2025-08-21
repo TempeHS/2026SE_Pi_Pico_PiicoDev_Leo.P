@@ -19,4 +19,6 @@ while True:
     else:
         print("No Green Found", hue)
 
+    # figure out what it sees as green
+
     sleep_ms(300)

@@ -4,6 +4,9 @@ from PiicoDev_Unified import sleep_ms
 colourSensor = PiicoDev_VEML6040()
 
 class Colour:
+    """
+    Class for detecting green tiles (victims) and notifying when they have been found 
+    """
     def __init__(self, debug=False):
         self.__debug = debug
 

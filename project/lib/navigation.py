@@ -18,6 +18,9 @@ r_servo = Servo(pwm=r_servo_pwm)
 
 #
 class Navigation:
+    """
+    Class that sets different ways for the IND to navigate
+    """
     def __init__(self, l_servo, r_servo, debug=False):
         self.__l_servo = l_servo
         self.__r_servo = r_servo
@@ -39,13 +42,13 @@ class Navigation:
         if self.__debug:
             print("Turning Right")
         self.__l_servo.set_duty(1500)
-        self.__r_servo.set_duty(1800)
+        self.__r_servo.set_duty(1760)
         time.sleep(2)
 
     def move_l(self):
         if self.__debug:
             print("Turning Left")
-        self.__l_servo.set_duty(1300)
+        self.__l_servo.set_duty(1260)
         self.__r_servo.set_duty(1500)
         time.sleep(2)
 

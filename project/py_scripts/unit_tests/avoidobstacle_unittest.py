@@ -25,12 +25,16 @@ while True:
     distance2 = range_b.distance_mm
     if distance1 <= 100 and distance2 > 100:
         movement.move_r()
+        print("moved right")
     elif distance1 > 100 and distance2 <= 100:
         movement.move_forward()
+        print("moved forward")
     elif distance1 <= 100 and distance2 <= 100:
         movement.move_l()
+        print("moved left")
     else:
         movement.move_forward()
+        print("moved forward")
     #sleep(.5)
 
 # removed the sleep because there was other issues with the previous code which made it require a sleep but with the issues fixed having a sleep at the end only makes it more prone to crashing into obstacles

@@ -6,6 +6,9 @@ from PiicoDev_Unified import sleep_ms
 from navigation import Navigation
 
 class Avoid:
+    """
+    Class to avoid colliding with walls / obstacles
+    """
     def __init__(self, debug=False):
         self.__debug = debug
 

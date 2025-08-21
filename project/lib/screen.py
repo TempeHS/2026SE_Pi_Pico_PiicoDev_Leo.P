@@ -4,6 +4,9 @@ from PiicoDev_Unified import sleep_ms
 display = create_PiicoDev_SSD1306()
 
 class Screen:
+    """
+    Class to display the state of the robot on the lcd screen
+    """
     def __init__(self, debug=False):
         self.__debug = debug
 
